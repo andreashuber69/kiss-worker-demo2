@@ -1,4 +1,4 @@
-import { createCalculatorWorker } from "./createCalculatorWorker.ts";
+import { createCalculatorWorker } from "./createCalculatorWorker.js";
 
 // Start a new worker thread waiting for work.
 const worker = await createCalculatorWorker();
