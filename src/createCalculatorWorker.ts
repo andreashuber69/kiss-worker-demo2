@@ -1,4 +1,4 @@
-import { implementObjectWorker } from "kiss-worker";
+import { implementObjectWorker, Worker } from "kiss-worker";
 
 // We want to serve an object of this class on a worker thread
 class Calculator {
@@ -12,9 +12,9 @@ class Calculator {
 }
 
 export const createCalculatorWorker = implementObjectWorker(
-    // A function that creates a web worker running this script
+    // A function that creates a worker running this script
     () => new Worker(
-        new URL("createCalculatorWorker.js", import.meta.url),
+        new URL("createCalculatorWorker.ts", import.meta.url),
         { type: "module" },
     ),
     Calculator,
